@@ -1,0 +1,17 @@
+{
+    "name": "SpaceShooterASMDEF",
+    "rootNamespace": "SpaceShooter",
+    "references": [
+        "GUID:2bafac87e7f4b9b418d9448d219b01ab",
+        "GUID:253696e5e8be35d4982d6804ef1b086c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
