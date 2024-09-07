@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace SpaceShooter
 {
@@ -20,6 +19,5 @@ namespace SpaceShooter
             float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
             transform.position = startPosition + Vector3.forward * newPosition;
         }
-    }
-
-}
+    } //class Done_BGScroller
+} //namespace SpaceShooter

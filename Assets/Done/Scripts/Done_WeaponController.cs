@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace SpaceShooter
 {
@@ -10,15 +9,27 @@ namespace SpaceShooter
         public float fireRate;
         public float delay;
 
-        void Start()
+        private float m_TimeRemaining = 0.0f;
+
+        private void Start()
         {
-            InvokeRepeating("Fire", delay, fireRate);
+            m_TimeRemaining = fireRate + delay;
         }
 
-        void Fire()
+        private void Update()
+        {
+            m_TimeRemaining -= Time.deltaTime;
+            if (m_TimeRemaining < 0.0f)
+            {
+                m_TimeRemaining += fireRate;
+                Fire();
+            }
+        }
+
+        private void Fire()
         {
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
             GetComponent<AudioSource>().Play();
         }
-    }
-}
+    } //class Done_WeaponController
+} //namespace SpaceShooter

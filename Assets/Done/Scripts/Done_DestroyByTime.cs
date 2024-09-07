@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace SpaceShooter
 {
@@ -7,9 +6,9 @@ namespace SpaceShooter
     {
         public float lifetime;
 
-        void Start()
+        private void Start()
         {
             Destroy(gameObject, lifetime);
         }
-    }
-}
+    } //class Done_DestroyByTime
+} //namespace SpaceShooter

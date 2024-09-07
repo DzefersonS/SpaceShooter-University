@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace SpaceShooter
 {
@@ -8,16 +7,17 @@ namespace SpaceShooter
         public GameObject explosion;
         public GameObject playerExplosion;
         public int scoreValue;
-        private Done_GameController gameController;
+
+        private Done_GameController m_GameController;
 
         void Start()
         {
             GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
             if (gameControllerObject != null)
             {
-                gameController = gameControllerObject.GetComponent<Done_GameController>();
+                m_GameController = gameControllerObject.GetComponent<Done_GameController>();
             }
-            if (gameController == null)
+            if (m_GameController == null)
             {
                 Debug.Log("Cannot find 'GameController' script");
             }
@@ -38,12 +38,12 @@ namespace SpaceShooter
             if (other.tag == "Player")
             {
                 Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-                gameController.GameOver();
+                m_GameController.GameOver();
             }
 
-            gameController.AddScore(scoreValue);
+            m_GameController.AddScore(scoreValue);
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-    }
-}
+    } //class Done_DestroyByContact
+} //namespace SpaceShooter

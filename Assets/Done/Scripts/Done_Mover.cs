@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace SpaceShooter
 {
@@ -7,10 +6,9 @@ namespace SpaceShooter
     {
         public float speed;
 
-        void Start()
+        private void Start()
         {
             GetComponent<Rigidbody>().velocity = transform.forward * speed;
         }
-    }
-
-}
+    } //class Done_Mover
+} //namespace SpaceShooter

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 namespace SpaceShooter
 {
-
     public class Done_GameController : MonoBehaviour
     {
         public GameObject[] hazards;
@@ -85,5 +84,5 @@ namespace SpaceShooter
             gameOverText.text = "Game Over!";
             gameOver = true;
         }
-    }
-}
+    } //class Done_GameController
+} //namespace SpaceShooter

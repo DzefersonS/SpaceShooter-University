@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Utils;
 
 namespace SpaceShooter
 {
@@ -21,9 +19,9 @@ namespace SpaceShooter
         public Transform shotSpawn;
         public float fireRate;
 
-        private float nextFire;
         private Rigidbody m_RigidBody = default;
         private AudioSource m_AudioSource = default;
+        private float m_NextFire = default;
 
         private void Awake()
         {
@@ -33,20 +31,17 @@ namespace SpaceShooter
 
         private void Update()
         {
-            if (Input.GetButton("Fire1") && Time.time > nextFire)
+            if (Input.GetButton("Fire1") && Time.time > m_NextFire)
             {
-                nextFire = Time.time + fireRate;
+                m_NextFire = Time.time + fireRate;
                 Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-                GetComponent<AudioSource>().Play();
+                m_AudioSource.Play();
             }
         }
 
         private void FixedUpdate()
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
-
-            Vector3 velocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * speed;
+            Vector3 velocity = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical")) * speed;
             m_RigidBody.velocity = velocity;
 
             m_RigidBody.position = new Vector3
@@ -58,7 +53,5 @@ namespace SpaceShooter
 
             m_RigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, velocity.x * -tilt);
         }
-    }
-
-
-}
+    } //class Done_PlayerController
+} //namespace SpaceShooter

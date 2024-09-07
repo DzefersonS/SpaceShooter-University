@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace SpaceShooter
 {
@@ -9,5 +8,5 @@ namespace SpaceShooter
         {
             Destroy(other.gameObject);
         }
-    }
-}
+    } //class Done_DestroyByBoundary
+} //namespace SpaceShooter
