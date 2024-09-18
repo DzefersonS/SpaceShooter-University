@@ -1465,12 +1465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerDeathEvent: {fileID: 11400000, guid: a60d0c78e6d53c746832beaf92ac822d, type: 2}
   hazards:
-  - {fileID: 100000, guid: 7d5f7699d6d1d48e485ac71126e12061, type: 3}
-  - {fileID: 100002, guid: 9143e2b62ad50488482f9b73672fc331, type: 3}
-  - {fileID: 100002, guid: 834bfaee90a9d4e04b1e8c1ca22cc88e, type: 3}
-  - {fileID: 100002, guid: afc18fc39ade3744397c0c993b57be53, type: 3}
+  - {fileID: 100002, guid: f2465b05e36271e4dae0baa88ea86c06, type: 3}
   spawnValues: {x: 0, y: 0, z: 100}
-  hazardCount: 5
+  hazardCount: 2
   spawnWait: 1
   startWait: 1
   waveWait: 1
