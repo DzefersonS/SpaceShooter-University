@@ -35,14 +35,12 @@ namespace SpaceShooter
                 Instantiate(explosion, transform.position, transform.rotation);
             }
 
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
-                Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-                m_GameController.GameOver();
+                other.GetComponent<Done_PlayerController>().TakeDamage();
             }
 
             m_GameController.AddScore(scoreValue);
-            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     } //class Done_DestroyByContact

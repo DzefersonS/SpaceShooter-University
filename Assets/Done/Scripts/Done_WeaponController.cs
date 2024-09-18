@@ -2,6 +2,7 @@
 
 namespace SpaceShooter
 {
+    [RequireComponent(typeof(AudioSource))]
     public class Done_WeaponController : MonoBehaviour
     {
         public GameObject shot;
@@ -9,11 +10,13 @@ namespace SpaceShooter
         public float fireRate;
         public float delay;
 
+        private AudioSource m_AudioSource = default;
         private float m_TimeRemaining = 0.0f;
 
         private void Start()
         {
             m_TimeRemaining = fireRate + delay;
+            m_AudioSource = GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -29,7 +32,7 @@ namespace SpaceShooter
         private void Fire()
         {
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-            GetComponent<AudioSource>().Play();
+            m_AudioSource.Play();
         }
     } //class Done_WeaponController
 } //namespace SpaceShooter

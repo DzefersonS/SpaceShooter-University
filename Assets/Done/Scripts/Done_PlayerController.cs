@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utils;
 
 namespace SpaceShooter
 {
@@ -11,6 +12,10 @@ namespace SpaceShooter
     [RequireComponent(typeof(Rigidbody), typeof(AudioSource))]
     public class Done_PlayerController : MonoBehaviour
     {
+        [SerializeField] private int m_MaxHealth;
+        [SerializeField] private GameObject m_PlayerExplosion;
+        [SerializeField] private SOEvent m_PlayerDeathEvent;
+
         public float speed;
         public float tilt;
         public Done_Boundary boundary;
@@ -19,14 +24,27 @@ namespace SpaceShooter
         public Transform shotSpawn;
         public float fireRate;
 
+        private Done_GameController m_GameController;
         private Rigidbody m_RigidBody = default;
         private AudioSource m_AudioSource = default;
         private float m_NextFire = default;
+        private int m_Health = 0;
 
         private void Awake()
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_AudioSource = GetComponent<AudioSource>();
+            m_Health = m_MaxHealth;
+
+            GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
+            if (gameControllerObject != null)
+            {
+                m_GameController = gameControllerObject.GetComponent<Done_GameController>();
+            }
+            if (m_GameController == null)
+            {
+                Debug.Log("Cannot find 'GameController' script");
+            }
         }
 
         private void Update()
@@ -52,6 +70,17 @@ namespace SpaceShooter
             );
 
             m_RigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, velocity.x * -tilt);
+        }
+
+        public void TakeDamage()
+        {
+            Instantiate(m_PlayerExplosion, transform.position, transform.rotation);
+
+            if (--m_Health <= 0)
+            {
+                m_PlayerDeathEvent.Raise();
+                Destroy(gameObject);
+            }
         }
     } //class Done_PlayerController
 } //namespace SpaceShooter

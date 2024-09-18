@@ -9,12 +9,12 @@ namespace SpaceShooter
 
         private Vector3 startPosition;
 
-        void Start()
+        private void Start()
         {
             startPosition = transform.position;
         }
 
-        void Update()
+        private void Update()
         {
             float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
             transform.position = startPosition + Vector3.forward * newPosition;

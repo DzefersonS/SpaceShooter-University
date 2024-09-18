@@ -2,11 +2,14 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+using Utils;
 
 namespace SpaceShooter
 {
     public class Done_GameController : MonoBehaviour
     {
+        [SerializeField] private SOEvent m_PlayerDeathEvent;
+
         public GameObject[] hazards;
         public Vector3 spawnValues;
         public int hazardCount;
@@ -17,20 +20,28 @@ namespace SpaceShooter
         public Text scoreText;
         public Text restartText;
         public Text gameOverText;
+        public Text highScoreText;
 
         private bool gameOver;
         private bool restart;
         private int score;
+        private int highScore;
 
         void Start()
         {
+            highScore = PlayerPrefs.GetInt("HighScore");
+
             gameOver = false;
             restart = false;
             restartText.text = "";
             gameOverText.text = "";
+            highScoreText.text = "High Score: " + highScore;
+            
             score = 0;
             UpdateScore();
             StartCoroutine(SpawnWaves());
+
+            m_PlayerDeathEvent.Register(GameOver);
         }
 
         void Update()
@@ -42,6 +53,11 @@ namespace SpaceShooter
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
             }
+        }
+
+        private void OnDestroy()
+        {
+            m_PlayerDeathEvent.Unregister(GameOver);
         }
 
         IEnumerator SpawnWaves()
@@ -82,6 +98,11 @@ namespace SpaceShooter
         public void GameOver()
         {
             gameOverText.text = "Game Over!";
+            if (score > highScore)
+            {
+                highScoreText.text = "New High Score Set: " + score;
+                PlayerPrefs.SetInt("HighScore", score);
+            }
             gameOver = true;
         }
     } //class Done_GameController
