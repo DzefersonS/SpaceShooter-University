@@ -1678,9 +1678,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
+    - target: {fileID: 100006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1710,49 +1710,36 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: m_Convex
-      value: 1
+    - target: {fileID: 400006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 400006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: m_MaxHealth
-      value: 3
+    - target: {fileID: 400006, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: boundary.xMax
-      value: 6
+    - target: {fileID: 1215078907278786960, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: boundary.xMin
-      value: -6
+    - target: {fileID: 1215078907278786960, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: boundary.zMax
-      value: 8
+    - target: {fileID: 2626994764203043895, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: boundary.zMin
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: gameController
-      value: 
-      objectReference: {fileID: 1904691131}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: m_PlayerExplosion
-      value: 
-      objectReference: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 3}
-    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
-      propertyPath: m_PlayerDeathEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a60d0c78e6d53c746832beaf92ac822d,
-        type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3989325956171502442, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}

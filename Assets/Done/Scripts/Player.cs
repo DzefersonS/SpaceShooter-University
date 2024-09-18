@@ -10,10 +10,9 @@ namespace SpaceShooter
     }
 
     [RequireComponent(typeof(Rigidbody), typeof(AudioSource))]
-    public class Done_PlayerController : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         [SerializeField] private int m_MaxHealth;
-        [SerializeField] private GameObject m_PlayerExplosion;
         [SerializeField] private SOEvent m_PlayerDeathEvent;
 
         public float speed;
@@ -71,16 +70,5 @@ namespace SpaceShooter
 
             m_RigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, velocity.x * -tilt);
         }
-
-        public void TakeDamage()
-        {
-            Instantiate(m_PlayerExplosion, transform.position, transform.rotation);
-
-            if (--m_Health <= 0)
-            {
-                m_PlayerDeathEvent.Raise();
-                Destroy(gameObject);
-            }
-        }
-    } //class Done_PlayerController
+    } //class Player
 } //namespace SpaceShooter

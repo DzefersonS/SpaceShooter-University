@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using Utils;
 
 namespace SpaceShooter
 {
     public class Done_DestroyByContact : MonoBehaviour
     {
+        [SerializeField] private SOEvent m_PlayerDamageEvent;
+
         public GameObject explosion;
         public GameObject playerExplosion;
         public int scoreValue;
@@ -37,7 +40,7 @@ namespace SpaceShooter
 
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<Done_PlayerController>().TakeDamage();
+                m_PlayerDamageEvent.Raise();
             }
 
             m_GameController.AddScore(scoreValue);
