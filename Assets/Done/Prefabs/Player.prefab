@@ -9797,8 +9797,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054c19cd9824a4257a98a59874c988f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MaxHealth: 3
   m_PlayerDeathEvent: {fileID: 11400000, guid: a60d0c78e6d53c746832beaf92ac822d, type: 2}
+  playerControls: {fileID: 0}
+  m_PlayerHealthChangeEvent: {fileID: 0}
   speed: 10
   tilt: 5
   boundary:
@@ -9809,6 +9810,7 @@ MonoBehaviour:
   shot: {fileID: 100000, guid: f4ec271e525e14ca9927a07e6a2e153d, type: 3}
   shotSpawn: {fileID: 400004}
   fireRate: 0.25
+  smoothTime: 0.1
 --- !u!114 &7640352379088408109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9821,10 +9823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9b96376ff0dda41971d388ef6e7b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Player: {fileID: 100006}
   m_PlayerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 3}
   m_HealthSlider: {fileID: 3257414135021285106}
-  m_PlayerDamageEvent: {fileID: 11400000, guid: 2dc73bae82fc7264892ef5fcbd93e89b,
-    type: 2}
+  m_PlayerHealthChangeEvent: {fileID: 0}
   m_PlayerDeathEvent: {fileID: 11400000, guid: a60d0c78e6d53c746832beaf92ac822d, type: 2}
   m_MaxHealth: 3
 --- !u!82 &8200000

@@ -8,6 +8,7 @@ namespace SpaceShooter
 {
     public class PlayerHealth : MonoBehaviour
     {
+        [SerializeField] private GameObject m_Player;
         [SerializeField] private GameObject m_PlayerExplosion;
         [SerializeField] private Slider m_HealthSlider;
         [SerializeField] private IntEvent m_PlayerHealthChangeEvent;
@@ -40,6 +41,7 @@ namespace SpaceShooter
             if (m_Health <= 0)
             {
                 m_PlayerDeathEvent.Raise();
+                Destroy(m_Player);
             }
         }
     }
