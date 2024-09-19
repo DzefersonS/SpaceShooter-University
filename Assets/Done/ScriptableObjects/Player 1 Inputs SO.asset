@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 807753d4d3832564bb466819c7f4cf61, type: 3}
-  m_Name: Player Inputs SO
+  m_Name: Player 1 Inputs SO
   m_EditorClassIdentifier: 
   moveForward: 119
   moveBackward: 115
