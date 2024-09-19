@@ -31,5 +31,5 @@ namespace SpaceShooter
             m_AddScoreEvent.value = scoreValue;
             Destroy(gameObject);
         }
-    } //class Done_DestroyByContact
-} //namespace SpaceShooter
+    }
+}

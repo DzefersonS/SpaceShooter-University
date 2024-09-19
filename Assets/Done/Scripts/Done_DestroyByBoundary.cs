@@ -8,5 +8,5 @@ namespace SpaceShooter
         {
             Destroy(other.gameObject);
         }
-    } //class Done_DestroyByBoundary
-} //namespace SpaceShooter
+    }
+}

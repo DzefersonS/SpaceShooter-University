@@ -13,7 +13,7 @@ namespace SpaceShooter
     public class Player : MonoBehaviour
     {
         [SerializeField] private SOEvent m_PlayerDeathEvent;
-        [SerializeField] private PlayerInputsSO playerControls; // Reference to the ScriptableObject
+        [SerializeField] private PlayerInputsSO playerControls;
         [SerializeField] private IntEvent m_PlayerHealthChangeEvent;
 
         public float speed;
@@ -29,8 +29,7 @@ namespace SpaceShooter
         private AudioSource m_AudioSource = default;
         private float m_NextFire = default;
 
-        // Smoothing parameters
-        public float smoothTime = 0.1f; // Time to smooth out the input
+        public float smoothTime = 0.1f;
         private Vector3 currentVelocity = Vector3.zero;
 
         private void Awake()
@@ -64,17 +63,14 @@ namespace SpaceShooter
             float moveHorizontal = 0.0f;
             float moveVertical = 0.0f;
 
-            // Input handling based on ScriptableObject
             if (Input.GetKey(playerControls.moveForward)) moveVertical += 1;
             if (Input.GetKey(playerControls.moveBackward)) moveVertical -= 1;
             if (Input.GetKey(playerControls.moveLeft)) moveHorizontal -= 1;
             if (Input.GetKey(playerControls.moveRight)) moveHorizontal += 1;
 
-            // Smooth the input values
             Vector3 targetVelocity = new Vector3(moveHorizontal, 0.0f, moveVertical) * speed;
             m_RigidBody.velocity = Vector3.SmoothDamp(m_RigidBody.velocity, targetVelocity, ref currentVelocity, smoothTime);
 
-            // Clamp the position within boundaries
             m_RigidBody.position = new Vector3
             (
                 Mathf.Clamp(m_RigidBody.position.x, boundary.xMin, boundary.xMax),
@@ -82,7 +78,6 @@ namespace SpaceShooter
                 Mathf.Clamp(m_RigidBody.position.z, boundary.zMin, boundary.zMax)
             );
 
-            // Rotate the player
             m_RigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, m_RigidBody.velocity.x * -tilt);
         }
 
@@ -90,5 +85,5 @@ namespace SpaceShooter
         {
             m_PlayerHealthChangeEvent.value = change;
         }
-    } //class Player
-} //namespace SpaceShooter
+    }
+}

@@ -108,5 +108,5 @@ namespace SpaceShooter
             }
             gameOver = true;
         }
-    } //class Done_GameController
-} //namespace SpaceShooter
+    }
+}

@@ -9,7 +9,7 @@ namespace SpaceShooter
         public Done_Boundary boundary;
         public float tilt;
         public float smoothing;
-        public float trackingSpeed; // New variable for how fast it tracks the player
+        public float trackingSpeed;
 
         private Rigidbody m_RigidBody;
         private float m_CurrentSpeed;
@@ -28,7 +28,6 @@ namespace SpaceShooter
 
         private void FixedUpdate()
         {
-            // Track the player horizontally
             float targetX = Mathf.Clamp(m_PlayerTransform.position.x, boundary.xMin, boundary.xMax);
             float newManeuver = Mathf.MoveTowards(m_RigidBody.velocity.x, targetX, trackingSpeed * Time.deltaTime);
 
@@ -42,5 +41,5 @@ namespace SpaceShooter
 
             m_RigidBody.rotation = Quaternion.Euler(0, 0, m_RigidBody.velocity.x * -tilt);
         }
-    } // class MovementTrackPlayer
-} // namespace SpaceShooter
+    }
+}

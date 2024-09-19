@@ -10,5 +10,5 @@ namespace SpaceShooter
         {
             Destroy(gameObject, lifetime);
         }
-    } //class Done_DestroyByTime
-} //namespace SpaceShooter
+    }
+}

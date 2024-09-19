@@ -50,5 +50,5 @@ namespace SpaceShooter
 
             m_RigidBody.rotation = Quaternion.Euler(0, 0, m_RigidBody.velocity.x * -tilt);
         }
-    } //class Done_EvasiveManeuver
-} //namespace SpaceShooter
+    }
+}

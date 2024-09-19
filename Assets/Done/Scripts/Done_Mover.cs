@@ -10,5 +10,5 @@ namespace SpaceShooter
         {
             GetComponent<Rigidbody>().velocity = transform.forward * speed;
         }
-    } //class Done_Mover
-} //namespace SpaceShooter
+    }
+}

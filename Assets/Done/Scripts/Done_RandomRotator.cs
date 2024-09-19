@@ -10,5 +10,5 @@ namespace SpaceShooter
         {
             GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
         }
-    } //class Done_RandomRotator
-} //namespace SpaceShooter
+    }
+}
