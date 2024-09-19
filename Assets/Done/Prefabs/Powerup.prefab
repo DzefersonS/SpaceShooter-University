@@ -174,5 +174,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 371cee65968ae814a83d21600588fffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ActivatePowerupEvent: {fileID: 11400000, guid: abfa5da51f3c76c478b29cbe72feb3fa,
+  m_PowerupActivateEventSO: {fileID: 11400000, guid: 2b515df734d04534c98d2c46e4f78fd5,
     type: 2}

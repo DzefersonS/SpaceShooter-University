@@ -10,7 +10,7 @@ namespace SpaceShooter
         [SerializeField] private int m_PointsToAdd;
         [SerializeField] private IntEvent m_ScoreAddEventSO;
 
-        public override void Activate()
+        public override void Activate(Player player)
         {
             m_ScoreAddEventSO.value = m_PointsToAdd;
         }

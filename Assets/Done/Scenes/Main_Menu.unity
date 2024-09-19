@@ -585,7 +585,7 @@ PrefabInstance:
     - target: {fileID: 114000012710092256, guid: c74f553b118f94bfcbe70a5cdcc48114,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: _Complete-Game
+      value: SpaceShooter_SOLO
       objectReference: {fileID: 0}
     - target: {fileID: 114000013473053928, guid: c74f553b118f94bfcbe70a5cdcc48114,
         type: 3}
@@ -857,16 +857,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: StartGame
-        m_Mode: 1
+      - m_Target: {fileID: 719234652}
+        m_TargetAssemblyTypeName: SpaceShooter.MainMenuButtons, SpaceShooterASMDEF
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SpaceShooter_COOP
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1527735711

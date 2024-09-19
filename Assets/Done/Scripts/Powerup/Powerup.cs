@@ -6,6 +6,6 @@ namespace SpaceShooter
 {
     public abstract class Powerup : MonoBehaviour
     {
-        public abstract void Activate();
+        public abstract void Activate(Player player);
     }
 }

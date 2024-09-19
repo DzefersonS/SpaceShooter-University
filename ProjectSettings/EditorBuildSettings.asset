@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Done/Scenes/Main_Menu.unity
     guid: 4229c6054cb9d2a4294c82aca09d685c
   - enabled: 1
-    path: Assets/Done/Scenes/_Complete-Game.unity
+    path: Assets/Done/Scenes/SpaceShooter_SOLO.unity
     guid: 53e6a0e5da8a749c596f61dfc60d86ae
+  - enabled: 1
+    path: Assets/Done/Scenes/SpaceShooter_COOP.unity
+    guid: 571af26def9e45a45b18c9fc11639404
   m_configObjects: {}

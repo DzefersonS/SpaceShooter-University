@@ -7,13 +7,13 @@ namespace SpaceShooter
 {
     public class PowerupCollider : MonoBehaviour
     {
-        [SerializeField] private SOEvent m_ActivatePowerupEvent;
+        [SerializeField] private PlayerEvent m_PowerupActivateEventSO;
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                m_ActivatePowerupEvent.Raise();
+                m_PowerupActivateEventSO.Raise();
                 Destroy(gameObject);
             }
         }

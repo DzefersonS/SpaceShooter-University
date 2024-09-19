@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Powerups:
   - {fileID: 975621494}
   - {fileID: 416570247}
-  m_PowerupActivateEventSO: {fileID: 11400000, guid: abfa5da51f3c76c478b29cbe72feb3fa,
+  m_PowerupActivateEventSO: {fileID: 11400000, guid: 2b515df734d04534c98d2c46e4f78fd5,
     type: 2}
 --- !u!1 &975621493
 GameObject:
@@ -549,8 +549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4a0dcdb1f589e4ba3401c142a94b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerHealthModifyEvent: {fileID: 11400000, guid: 8be2f4569436d714eac43617fa2d9105,
-    type: 2}
 --- !u!4 &975621495
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,6 +1872,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 22d37e61070530f499dedf784a8e2281,
         type: 2}
+    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
+      propertyPath: m_PlayerHealthChangeEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c862e182ba549448bd81e149c8d1b95,
+        type: 2}
     - target: {fileID: 1215078907278786960, guid: 738bdf56857a65f479c367c7b62c4ad7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1893,7 +1896,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayerHealthChangeEvent
       value: 
-      objectReference: {fileID: 11400000, guid: 8be2f4569436d714eac43617fa2d9105,
+      objectReference: {fileID: 11400000, guid: 5c862e182ba549448bd81e149c8d1b95,
         type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:

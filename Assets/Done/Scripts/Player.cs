@@ -12,9 +12,9 @@ namespace SpaceShooter
     [RequireComponent(typeof(Rigidbody), typeof(AudioSource))]
     public class Player : MonoBehaviour
     {
-        [SerializeField] private int m_MaxHealth;
         [SerializeField] private SOEvent m_PlayerDeathEvent;
         [SerializeField] private PlayerInputsSO playerControls; // Reference to the ScriptableObject
+        [SerializeField] private IntEvent m_PlayerHealthChangeEvent;
 
         public float speed;
         public float tilt;
@@ -28,7 +28,6 @@ namespace SpaceShooter
         private Rigidbody m_RigidBody = default;
         private AudioSource m_AudioSource = default;
         private float m_NextFire = default;
-        private int m_Health = 0;
 
         // Smoothing parameters
         public float smoothTime = 0.1f; // Time to smooth out the input
@@ -38,7 +37,6 @@ namespace SpaceShooter
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_AudioSource = GetComponent<AudioSource>();
-            m_Health = m_MaxHealth;
 
             GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
             if (gameControllerObject != null)
@@ -86,6 +84,11 @@ namespace SpaceShooter
 
             // Rotate the player
             m_RigidBody.rotation = Quaternion.Euler(0.0f, 0.0f, m_RigidBody.velocity.x * -tilt);
+        }
+
+        public void ModifyHealth(int change)
+        {
+            m_PlayerHealthChangeEvent.value = change;
         }
     } //class Player
 } //namespace SpaceShooter

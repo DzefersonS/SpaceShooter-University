@@ -7,11 +7,9 @@ namespace SpaceShooter
 {
     public class PowerupAddHealth : Powerup
     {
-        [SerializeField] private IntEvent m_PlayerHealthModifyEvent;
-
-        public override void Activate()
+        public override void Activate(Player player)
         {
-            m_PlayerHealthModifyEvent.value = 1;
+            player.ModifyHealth(1);
         }
     }
 }
