@@ -6,25 +6,11 @@ namespace SpaceShooter
     public class Done_DestroyByContact : MonoBehaviour
     {
         [SerializeField] private IntEvent m_PlayerHealthChangeEvent;
+        [SerializeField] private IntEvent m_AddScoreEvent;
 
         public GameObject explosion;
         public GameObject playerExplosion;
         public int scoreValue;
-
-        private Done_GameController m_GameController;
-
-        void Start()
-        {
-            GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
-            if (gameControllerObject != null)
-            {
-                m_GameController = gameControllerObject.GetComponent<Done_GameController>();
-            }
-            if (m_GameController == null)
-            {
-                Debug.Log("Cannot find 'GameController' script");
-            }
-        }
 
         void OnTriggerEnter(Collider other)
         {
@@ -43,7 +29,7 @@ namespace SpaceShooter
                 m_PlayerHealthChangeEvent.value = -1;
             }
 
-            m_GameController.AddScore(scoreValue);
+            m_AddScoreEvent.value = scoreValue;
             Destroy(gameObject);
         }
     } //class Done_DestroyByContact

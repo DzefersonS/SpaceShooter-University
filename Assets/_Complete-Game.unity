@@ -207,6 +207,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9930946b7c5f48e44aef1e56c2de7315, type: 3}
+--- !u!1 &416570245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416570246}
+  - component: {fileID: 416570247}
+  m_Layer: 0
+  m_Name: PowerupAddPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416570246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416570245}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 931585008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &416570247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416570245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c59a1d69ff84834ba4c55221a0448db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PointsToAdd: 20
+  m_ScoreAddEventSO: {fileID: 11400000, guid: b629731d9371bc144b9456a24ce6772c, type: 2}
 --- !u!1001 &494299600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,6 +500,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 975621495}
+  - {fileID: 416570246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &931585009
@@ -470,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Powerups:
   - {fileID: 975621494}
+  - {fileID: 416570247}
   m_PowerupActivateEventSO: {fileID: 11400000, guid: abfa5da51f3c76c478b29cbe72feb3fa,
     type: 2}
 --- !u!1 &975621493
@@ -1559,6 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerDeathEvent: {fileID: 11400000, guid: a60d0c78e6d53c746832beaf92ac822d, type: 2}
+  m_AddScoreEvent: {fileID: 11400000, guid: b629731d9371bc144b9456a24ce6772c, type: 2}
   hazards:
   - {fileID: 100002, guid: 2c3065e9de74b754db77fff851ea664e, type: 3}
   - {fileID: 100002, guid: afc18fc39ade3744397c0c993b57be53, type: 3}

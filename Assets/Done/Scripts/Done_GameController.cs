@@ -9,6 +9,7 @@ namespace SpaceShooter
     public class Done_GameController : MonoBehaviour
     {
         [SerializeField] private SOEvent m_PlayerDeathEvent;
+        [SerializeField] private IntEvent m_AddScoreEvent;
 
         public GameObject[] hazards;
         public Vector3 spawnValues;
@@ -42,6 +43,7 @@ namespace SpaceShooter
             StartCoroutine(SpawnWaves());
 
             m_PlayerDeathEvent.Register(GameOver);
+            m_AddScoreEvent.Register(AddScore);
         }
 
         void Update()
@@ -58,6 +60,7 @@ namespace SpaceShooter
         private void OnDestroy()
         {
             m_PlayerDeathEvent.Unregister(GameOver);
+            m_AddScoreEvent.Unregister(AddScore);
         }
 
         IEnumerator SpawnWaves()
@@ -84,9 +87,9 @@ namespace SpaceShooter
             }
         }
 
-        public void AddScore(int newScoreValue)
+        public void AddScore()
         {
-            score += newScoreValue;
+            score += m_AddScoreEvent.value;
             UpdateScore();
         }
 
