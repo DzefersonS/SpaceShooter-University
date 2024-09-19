@@ -5,7 +5,7 @@ namespace SpaceShooter
 {
     public class Done_DestroyByContact : MonoBehaviour
     {
-        [SerializeField] private SOEvent m_PlayerDamageEvent;
+        [SerializeField] private IntEvent m_PlayerHealthChangeEvent;
 
         public GameObject explosion;
         public GameObject playerExplosion;
@@ -40,7 +40,7 @@ namespace SpaceShooter
 
             if (other.CompareTag("Player"))
             {
-                m_PlayerDamageEvent.Raise();
+                m_PlayerHealthChangeEvent.value = -1;
             }
 
             m_GameController.AddScore(scoreValue);

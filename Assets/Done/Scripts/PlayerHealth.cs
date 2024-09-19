@@ -10,7 +10,7 @@ namespace SpaceShooter
     {
         [SerializeField] private GameObject m_PlayerExplosion;
         [SerializeField] private Slider m_HealthSlider;
-        [SerializeField] private SOEvent m_PlayerDamageEvent;
+        [SerializeField] private IntEvent m_PlayerHealthChangeEvent;
         [SerializeField] private SOEvent m_PlayerDeathEvent;
         [SerializeField] private int m_MaxHealth;
 
@@ -21,18 +21,22 @@ namespace SpaceShooter
             m_HealthSlider.maxValue = m_MaxHealth;
             m_HealthSlider.value = m_MaxHealth;
             m_Health = m_MaxHealth;
-            m_PlayerDamageEvent.Register(TakeDamage);
+            m_PlayerHealthChangeEvent.Register(ModifyHealth);
         }
 
         private void OnDestroy()
         {
-            m_PlayerDamageEvent.Unregister(TakeDamage);
+            m_PlayerHealthChangeEvent.Unregister(ModifyHealth);
         }
 
-        private void TakeDamage()
+        private void ModifyHealth()
         {
-            m_HealthSlider.value = --m_Health;
-            Instantiate(m_PlayerExplosion, transform.position, transform.rotation);
+            m_Health += m_PlayerHealthChangeEvent.value;
+            m_HealthSlider.value = m_Health;
+
+            if(m_PlayerHealthChangeEvent.value < 0)
+                Instantiate(m_PlayerExplosion, transform.position, transform.rotation);
+            
             if (m_Health <= 0)
             {
                 m_PlayerDeathEvent.Raise();

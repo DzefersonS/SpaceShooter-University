@@ -423,6 +423,101 @@ Transform:
   - {fileID: 1566069603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &931585007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 931585008}
+  - component: {fileID: 931585009}
+  m_Layer: 0
+  m_Name: PowerupController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &931585008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931585007}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 975621495}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &931585009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931585007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d428a44e029d7c428e6eaf9a28a4ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Powerups:
+  - {fileID: 975621494}
+  m_PowerupActivateEventSO: {fileID: 11400000, guid: abfa5da51f3c76c478b29cbe72feb3fa,
+    type: 2}
+--- !u!1 &975621493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975621495}
+  - component: {fileID: 975621494}
+  m_Layer: 0
+  m_Name: PowerupAddHealth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &975621494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975621493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4a0dcdb1f589e4ba3401c142a94b83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerHealthModifyEvent: {fileID: 11400000, guid: 8be2f4569436d714eac43617fa2d9105,
+    type: 2}
+--- !u!4 &975621495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975621493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 931585008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &979031170
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1465,9 +1560,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerDeathEvent: {fileID: 11400000, guid: a60d0c78e6d53c746832beaf92ac822d, type: 2}
   hazards:
+  - {fileID: 100002, guid: 2c3065e9de74b754db77fff851ea664e, type: 3}
+  - {fileID: 100002, guid: afc18fc39ade3744397c0c993b57be53, type: 3}
   - {fileID: 100002, guid: f2465b05e36271e4dae0baa88ea86c06, type: 3}
-  spawnValues: {x: 0, y: 0, z: 100}
-  hazardCount: 2
+  - {fileID: 100000, guid: 7d5f7699d6d1d48e485ac71126e12061, type: 3}
+  - {fileID: 100002, guid: 9143e2b62ad50488482f9b73672fc331, type: 3}
+  - {fileID: 100002, guid: 834bfaee90a9d4e04b1e8c1ca22cc88e, type: 3}
+  - {fileID: 176482, guid: 7d7e0fee1bc5f0b42b560be45b36b6ed, type: 3}
+  spawnValues: {x: 6, y: 0, z: 100}
+  hazardCount: 6
   spawnWait: 1
   startWait: 1
   waveWait: 1
@@ -1719,6 +1820,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
+      propertyPath: playerControls
+      value: 
+      objectReference: {fileID: 11400000, guid: 22d37e61070530f499dedf784a8e2281,
+        type: 2}
     - target: {fileID: 1215078907278786960, guid: 738bdf56857a65f479c367c7b62c4ad7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1734,6 +1840,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7640352379088408109, guid: 738bdf56857a65f479c367c7b62c4ad7,
+        type: 3}
+      propertyPath: m_PlayerHealthChangeEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 8be2f4569436d714eac43617fa2d9105,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3989325956171502442, guid: 738bdf56857a65f479c367c7b62c4ad7, type: 3}
@@ -1835,3 +1947,4 @@ SceneRoots:
   - {fileID: 494299600}
   - {fileID: 1584479177}
   - {fileID: 1107173268}
+  - {fileID: 931585008}
