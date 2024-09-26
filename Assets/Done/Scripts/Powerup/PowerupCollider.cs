@@ -13,7 +13,7 @@ namespace SpaceShooter
         {
             if (other.CompareTag("Player"))
             {
-                m_PowerupActivateEventSO.Raise();
+                m_PowerupActivateEventSO.value = other.GetComponent<Player>();
                 Destroy(gameObject);
             }
         }

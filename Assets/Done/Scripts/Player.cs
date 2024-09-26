@@ -21,6 +21,7 @@ namespace SpaceShooter
         public Done_Boundary boundary;
 
         public GameObject shot;
+        public GameObject powerupShot;
         public Transform shotSpawn;
         public float fireRate;
 
@@ -31,7 +32,8 @@ namespace SpaceShooter
 
         public float smoothTime = 0.1f;
         private Vector3 currentVelocity = Vector3.zero;
-
+        private GameObject m_CurrentlyUsedShot = default;
+        
         private void Awake()
         {
             m_RigidBody = GetComponent<Rigidbody>();
@@ -46,6 +48,8 @@ namespace SpaceShooter
             {
                 Debug.Log("Cannot find 'GameController' script");
             }
+
+            m_CurrentlyUsedShot = shot;
         }
 
         private void Update()
@@ -53,7 +57,9 @@ namespace SpaceShooter
             if (Input.GetKey(playerControls.shoot) && Time.time > m_NextFire)
             {
                 m_NextFire = Time.time + fireRate;
-                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                Vector3 rotation = shotSpawn.rotation.eulerAngles;
+                rotation.z = 0;
+                Instantiate(m_CurrentlyUsedShot, shotSpawn.position, Quaternion.Euler(rotation));
                 m_AudioSource.Play();
             }
         }
@@ -84,6 +90,11 @@ namespace SpaceShooter
         public void ModifyHealth(int change)
         {
             m_PlayerHealthChangeEvent.value = change;
+        }
+
+        public void ShootPowerup(bool powerup)
+        {
+            m_CurrentlyUsedShot = powerup ? powerupShot : shot;
         }
     }
 }

@@ -18,7 +18,9 @@ namespace SpaceShooter
         {
             for (int i = 0; i < m_BurstCount; i++)
             {
-                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                Vector3 rotation = shotSpawn.rotation.eulerAngles;
+                rotation.z = 0;
+                Instantiate(shot, shotSpawn.position, Quaternion.Euler(rotation));
                 m_AudioSource.Play();
                 yield return new WaitForSeconds(m_DelayBetweenShots);
             }

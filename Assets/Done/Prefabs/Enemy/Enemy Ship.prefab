@@ -4821,7 +4821,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 3.3576717, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4890,8 +4890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8846417901f4942d2a5fa9e32ce69d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerHealthChangeEvent: {fileID: 11400000, guid: 8be2f4569436d714eac43617fa2d9105,
-    type: 2}
   m_AddScoreEvent: {fileID: 11400000, guid: b629731d9371bc144b9456a24ce6772c, type: 2}
   explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 3}
   playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 3}
@@ -4997,7 +4995,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -5027,7 +5025,7 @@ AudioSource:
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
 --- !u!114 &7194259417943706991
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,9 @@ namespace SpaceShooter
     {
         protected override void Fire()
         {
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            Vector3 rotation = shotSpawn.rotation.eulerAngles;
+            rotation.z = 0;
+            Instantiate(shot, shotSpawn.position, Quaternion.Euler(rotation));
             m_AudioSource.Play();
         }
     }
